@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Index - Feb demo emails</title>
+    {% include 'cssLinks.html' %}
+  </head>
+  <body>
+    <div class="container">
+
+      <h1>Email validations</h1>
+
+      {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <p class="bademail"> {{message}} </p>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+
+
+
+
+
+
+      <form action="/process" method = "post">
+        <label for="email">Email:</label>
+        <input type="text" name="email" />
+        <button class="btn" type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
